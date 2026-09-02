@@ -1,43 +1,77 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex,nofollow">
-<title>Takaponz — Apps</title>
-<style>
-  :root { color-scheme: light dark; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
-    max-width: 640px;
-    margin: 4rem auto;
-    padding: 0 1.5rem;
-    line-height: 1.7;
-  }
-  h1 { font-size: 1.6rem; margin-bottom: 0.5rem; }
-  .sub { color: #888; font-size: 0.95rem; margin-bottom: 2rem; }
-  ul { padding-left: 1.2rem; }
-  li { margin-bottom: 0.4rem; }
-  a { color: #0a66c2; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  footer { margin-top: 3rem; color: #aaa; font-size: 0.85rem; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Takaponzが開発・運営するiOSアプリの公式サイトです。">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://takaponz.github.io/">
+  <link rel="stylesheet" href="/assets/site.css">
+  <title>Takaponz Apps</title>
 </head>
 <body>
-  <h1>Takaponz — Apps</h1>
-  <p class="sub">個人開発アプリのインデックスページ</p>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Takaponz Apps ホーム">Takaponz <span>Apps</span></a>
+      <nav class="site-nav" aria-label="主要ナビゲーション">
+        <a href="/number-sniper/">数直線スナイパー</a>
+        <a href="https://takaponz.github.io/omikuji-qr-legal/">おみくじQR</a>
+      </nav>
+    </div>
+  </header>
 
-  <h2>公開アプリ</h2>
-  <ul>
-    <li>
-      <strong>おみくじQRリーダー</strong> (iOS)
-      <ul>
-        <li><a href="https://apps.apple.com/jp/app/id6778050721">App Store</a></li>
-        <li><a href="https://takaponz.github.io/omikuji-qr-legal/">プライバシーポリシー・利用規約・特商法</a></li>
-      </ul>
-    </li>
-  </ul>
+  <main id="main" class="hub-main">
+    <section class="hub-intro" aria-labelledby="hub-title">
+      <p class="kicker">個人開発アプリ</p>
+      <h1 id="hub-title">小さなひらめきを、<br>毎日の一本に。</h1>
+      <p>Takaponzが開発・運営するiOSアプリの公式情報、サポート、プライバシーポリシーをまとめています。</p>
+    </section>
 
-  <footer>© Takaponz</footer>
+    <section class="app-directory" aria-labelledby="apps-title">
+      <h2 id="apps-title">アプリ</h2>
+
+      <article class="app-row app-row-featured">
+        <img
+          src="/assets/number-sniper-icon-224.png"
+          srcset="/assets/number-sniper-icon-224.png 224w, /assets/number-sniper-icon-512.png 512w, /assets/number-sniper-icon.png 1024w"
+          sizes="(max-width: 640px) 76px, 112px"
+          alt="数直線スナイパーのアプリアイコン"
+          width="112"
+          height="112"
+        >
+        <div>
+          <p class="app-status">iOS・公開準備中</p>
+          <h3><a href="/number-sniper/">数直線スナイパー</a></h3>
+          <p>数字の位置を狙う、約30秒からの瞬発数直線ゲーム。</p>
+          <div class="inline-links">
+            <a href="/number-sniper/">アプリについて</a>
+            <a href="/number-sniper/support/">サポート</a>
+            <a href="/number-sniper/privacy/">プライバシー</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="app-row">
+        <div class="app-monogram" aria-hidden="true">QR</div>
+        <div>
+          <p class="app-status">iOS・公開中</p>
+          <h3>おみくじQRリーダー</h3>
+          <p>QRコードを読み取り、結果を端末内へ記録できるiOSアプリ。</p>
+          <div class="inline-links">
+            <a href="https://apps.apple.com/jp/app/id6778050721">App Store</a>
+            <a href="https://takaponz.github.io/omikuji-qr-legal/">サポート・法務情報</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 Takaponz</p>
+      <a href="mailto:takaponz.support@gmail.com">お問い合わせ</a>
+    </div>
+  </footer>
 </body>
 </html>

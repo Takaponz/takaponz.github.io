@@ -1,0 +1,684 @@
+:root {
+  color-scheme: light;
+  --ink: #05070c;
+  --night: #0a0e18;
+  --paper: #f6f8fc;
+  --white: #ffffff;
+  --text: #101522;
+  --muted: #5f6878;
+  --line: #dce2ec;
+  --blue: #0a84ff;
+  --blue-dark: #0064c8;
+  --yellow: #ffd60a;
+  --max: 1120px;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", "Yu Gothic", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--blue-dark);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 0.08em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.14em;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.55rem 0.85rem;
+  background: var(--white);
+  color: var(--text);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  background: var(--ink);
+  color: var(--white);
+  border-bottom: 1px solid #263044;
+}
+
+.header-inner,
+.footer-inner {
+  width: min(calc(100% - 3rem), var(--max));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.header-inner {
+  min-height: 68px;
+}
+
+.brand {
+  color: var(--white);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  text-decoration: none;
+}
+
+.brand span {
+  color: #8fc6ff;
+  font-weight: 600;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  font-size: 0.9rem;
+}
+
+.site-nav a {
+  color: #dceaff;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--white);
+}
+
+.hub-main,
+.document-main {
+  width: min(calc(100% - 3rem), var(--max));
+  margin: 0 auto;
+}
+
+.hub-intro {
+  padding: clamp(4.5rem, 10vw, 8rem) 0 clamp(3.5rem, 8vw, 6rem);
+  max-width: 820px;
+}
+
+.kicker {
+  margin: 0 0 1rem;
+  color: var(--blue-dark);
+  font-weight: 700;
+}
+
+.hub-intro h1 {
+  margin: 0;
+  font-family: ui-rounded, "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: clamp(2.75rem, 8vw, 6.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+
+.hub-intro > p:last-child {
+  max-width: 680px;
+  margin: 2rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.app-directory {
+  padding: 0 0 7rem;
+}
+
+.app-directory > h2 {
+  margin: 0;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--text);
+  font-size: 1rem;
+}
+
+.app-row {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 1.75rem;
+  align-items: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.app-row img,
+.app-monogram {
+  border-radius: 24px;
+}
+
+.app-row img {
+  box-shadow: 0 10px 25px rgb(4 14 35 / 18%);
+}
+
+.app-row h3 {
+  margin: 0.1rem 0 0.3rem;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.25;
+}
+
+.app-row h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-row p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.app-row .app-status {
+  color: var(--blue-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.app-monogram {
+  display: grid;
+  width: 112px;
+  aspect-ratio: 1;
+  place-items: center;
+  background: #e7eef8;
+  color: #25344c;
+  font: 800 1.4rem/1 ui-rounded, sans-serif;
+}
+
+.inline-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 0.8rem;
+}
+
+.inline-links a {
+  font-weight: 650;
+}
+
+.product-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--white);
+  min-height: 680px;
+}
+
+.hero-inner {
+  position: relative;
+  width: min(calc(100% - 3rem), var(--max));
+  min-height: 680px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: clamp(2rem, 7vw, 6rem);
+  align-items: center;
+  padding: 5.5rem 0 7rem;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-family: ui-rounded, "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: clamp(3rem, 8vw, 6.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.06em;
+}
+
+.hero-copy .hero-lead {
+  max-width: 620px;
+  margin: 1.5rem 0 0;
+  color: #c7d1df;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+
+.product-hero .kicker {
+  color: #8fc6ff;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem 1.2rem;
+  margin-top: 2rem;
+}
+
+.release-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid #4c5b73;
+  border-radius: 999px;
+  color: #d7e4f7;
+  font-weight: 700;
+}
+
+.hero-note {
+  color: #9da9bb;
+  font-size: 0.9rem;
+}
+
+.hero-icon-wrap {
+  position: relative;
+  z-index: 2;
+  justify-self: end;
+  width: min(100%, 390px);
+}
+
+.hero-icon {
+  width: 100%;
+  border-radius: 22.5%;
+  box-shadow: 0 30px 80px rgb(0 75 180 / 28%);
+}
+
+.hero-number-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2.8rem;
+  height: 44px;
+  color: #dcecff;
+  opacity: 0.88;
+}
+
+.hero-number-line::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: currentColor;
+  box-shadow: 0 0 12px var(--blue);
+}
+
+.hero-number-line .tick,
+.hero-number-line .target {
+  position: absolute;
+  top: 8px;
+  width: 3px;
+  height: 28px;
+  background: currentColor;
+}
+
+.hero-number-line .tick:first-child { left: 0; }
+.hero-number-line .tick:nth-child(2) { left: 25%; }
+.hero-number-line .tick:nth-child(3) { left: 50%; }
+.hero-number-line .tick:nth-child(4) { left: 75%; }
+.hero-number-line .tick:nth-child(5) { right: 0; }
+
+.hero-number-line .target {
+  top: 0;
+  left: 30%;
+  width: 5px;
+  height: 44px;
+  border-radius: 4px;
+  background: var(--yellow);
+  box-shadow: 0 0 14px var(--yellow);
+}
+
+.product-main {
+  background: var(--white);
+}
+
+.product-section {
+  width: min(calc(100% - 3rem), var(--max));
+  margin: 0 auto;
+  padding: clamp(4.5rem, 9vw, 8rem) 0;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 3rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-family: ui-rounded, "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+
+.section-heading p {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.feature-list {
+  border-top: 3px solid var(--text);
+}
+
+.feature-item {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.35fr) minmax(0, 0.65fr);
+  gap: 2rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.feature-item h3,
+.feature-item p {
+  margin: 0;
+}
+
+.feature-item h3 {
+  font-size: 1.2rem;
+}
+
+.feature-item p {
+  color: var(--muted);
+}
+
+.screens-section {
+  background: #eaf4ff;
+}
+
+.screen-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: start;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.screen-grid figure {
+  margin: 0;
+}
+
+.screen-grid img {
+  width: 100%;
+  border: 10px solid var(--ink);
+  border-radius: 44px;
+  box-shadow: 0 25px 45px rgb(32 79 130 / 18%);
+}
+
+.screen-grid figure:nth-child(2) {
+  margin-top: 5rem;
+}
+
+.screen-grid figcaption {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.support-callout {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.support-callout .product-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: center;
+}
+
+.support-callout h2 {
+  margin: 0;
+  font-family: ui-rounded, sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: -0.04em;
+}
+
+.support-callout p {
+  margin: 0.7rem 0 0;
+  color: #b9c5d6;
+}
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0.8rem 1.35rem;
+  border-radius: 999px;
+  background: var(--blue-dark);
+  color: var(--white);
+  font-weight: 750;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.button-link:hover {
+  background: #0055aa;
+  text-decoration: none;
+}
+
+.document-main {
+  padding: clamp(3.5rem, 8vw, 7rem) 0;
+}
+
+.document-header,
+.document-body {
+  max-width: 800px;
+}
+
+.document-header {
+  margin-bottom: 3.5rem;
+}
+
+.document-header h1 {
+  margin: 0;
+  font-family: ui-rounded, "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.document-header p {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.document-meta {
+  margin-top: 1.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.document-body section {
+  padding: 2rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.document-body h2 {
+  margin: 0 0 0.8rem;
+  font-size: clamp(1.35rem, 3vw, 1.7rem);
+  line-height: 1.35;
+}
+
+.document-body h3 {
+  margin: 1.5rem 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.document-body p,
+.document-body ul,
+.document-body ol {
+  margin-top: 0.7rem;
+  margin-bottom: 0;
+}
+
+.document-body ul,
+.document-body ol {
+  padding-left: 1.4rem;
+}
+
+.document-body li + li {
+  margin-top: 0.45rem;
+}
+
+.support-email {
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.notice {
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  border-left: 5px solid var(--yellow);
+  background: #fff9d7;
+}
+
+.notice p {
+  margin: 0;
+}
+
+.site-footer {
+  background: var(--night);
+  color: #aeb9ca;
+}
+
+.footer-inner {
+  min-height: 110px;
+  font-size: 0.9rem;
+}
+
+.footer-inner a {
+  color: #dbeaff;
+}
+
+.footer-inner .inline-links {
+  margin-top: 0;
+}
+
+@media (max-width: 740px) {
+  .header-inner,
+  .footer-inner,
+  .hub-main,
+  .document-main,
+  .hero-inner,
+  .product-section {
+    width: min(calc(100% - 2rem), var(--max));
+  }
+
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.9rem 0;
+  }
+
+  .site-nav {
+    width: 100%;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.1rem;
+    white-space: nowrap;
+  }
+
+  .app-row {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .app-row img,
+  .app-monogram {
+    width: 76px;
+    border-radius: 17px;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 4rem 0 7rem;
+  }
+
+  .hero-icon-wrap {
+    justify-self: start;
+    width: 180px;
+  }
+
+  .hero-number-line {
+    bottom: 2rem;
+  }
+
+  .feature-item,
+  .support-callout .product-section {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .screen-grid {
+    gap: 1rem;
+  }
+
+  .screen-grid img {
+    border-width: 6px;
+    border-radius: 26px;
+  }
+
+  .screen-grid figure:nth-child(2) {
+    margin-top: 2.5rem;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .hub-intro h1,
+  .hero-copy h1 {
+    word-break: keep-all;
+  }
+
+  .screen-grid {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+
+  .screen-grid figure:nth-child(2) {
+    margin-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
